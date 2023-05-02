@@ -1,4 +1,4 @@
-.container{
+.container {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -15,19 +15,21 @@ ul {
   padding: 0;
 }
 
-li{
+li {
   border-bottom: 2px solid lightgray;
   padding: 6%;
   width: 240px;
   display: flex;
   justify-content: space-between;
 }
-.input-container{
+
+.input-container {
   display: flex;
   width: 100%;
   justify-content: center;
 }
-.add-input{
+
+.add-input {
   width: 45%;
 }
 

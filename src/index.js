@@ -1,53 +1,51 @@
-import _ from 'lodash';
 import './style.css';
 
 const tasks = [
   {
-  id: 0,
-  description: 'Do laundry',
-  completed: false,
+    id: 0,
+    description: 'Do laundry',
+    completed: false,
   },
   {
-  id: 1,
-  description: 'Buy groceries',
-  completed: false,
+    id: 1,
+    description: 'Buy groceries',
+    completed: false,
   },
   {
-  id: 2,
-  description: 'Go for a run',
-  completed: true,
+    id: 2,
+    description: 'Go for a run',
+    completed: true,
   },
-  ];
-  
-  class Task {
+];
+
+class Task {
   constructor(description) {
-  this.id = tasks.length;
-  this.description = description;
-  this.completed = false;
+    this.id = tasks.length;
+    this.description = description;
+    this.completed = false;
   }
-  
+
   static toggleTaskStatus(id) {
-  tasks.forEach((task) => {
-  if (task.id === id) {
-  task.completed = !task.completed;
+    tasks.forEach((task) => {
+      if (task.id === id) {
+        task.completed = !task.completed;
+      }
+    });
   }
-  });
-  }
-  }
-  
-  window.onload = () => {
+}
+
+window.onload = () => {
   const todoList = document.querySelector('.todo-list');
-  tasks.forEach((task) => {
-  const li = document.createElement('li');
-  li.className = 'todo-item';
-  li.innerHTML =   ` 
+  Task.tasks.forEach((task) => {
+    const li = document.createElement('li');
+    li.className = 'todo-item';
+    li.innerHTML = ` 
       <label data-id=${task.id} class="${task.completed ? 'todo-completed' : ''}"> 
       <input type="checkbox" class="todo-item-check" ${task.completed ? 'checked' : ''}> 
       ${task.description}    
       </label>
       <i class="fas fa-ellipsis-v item-edit-icon"></i> 
       `;
-  todoList.appendChild(li);
-
+    todoList.appendChild(li);
   });
-  };
+};
