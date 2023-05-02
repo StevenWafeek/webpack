@@ -1,18 +1,52 @@
 import _ from 'lodash';
-import printMe from './print.js';
 
-function component() {
-  const element = document.createElement('div');
-  const btn = document.createElement('button');
+const tasks = [
+  {
+  id: 0,
+  description: 'Do laundry',
+  completed: false,
+  },
+  {
+  id: 1,
+  description: 'Buy groceries',
+  completed: false,
+  },
+  {
+  id: 2,
+  description: 'Go for a run',
+  completed: true,
+  },
+  ];
+  
+  class Task {
+  constructor(description) {
+  this.id = tasks.length;
+  this.description = description;
+  this.completed = false;
+  }
+  
+  static toggleTaskStatus(id) {
+  tasks.forEach((task) => {
+  if (task.id === id) {
+  task.completed = !task.completed;
+  }
+  });
+  }
+  }
+  
+  window.onload = () => {
+  const todoList = document.querySelector('.todo-list');
+  tasks.forEach((task) => {
+  const li = document.createElement('li');
+  li.className = 'todo-item';
+  li.innerHTML =   ` 
+      <label data-id=${task.id} class="${task.completed ? 'todo-completed' : ''}"> 
+      <input type="checkbox" class="todo-item-check" ${task.completed ? 'checked' : ''}> 
+      ${task.description}    
+      </label>
+      <i class="fas fa-ellipsis-v item-edit-icon"></i> 
+      `;
+  todoList.appendChild(li);
 
-  element.innerHTML = _.join(['Hello', 'webpack'], ' ');
-
-  btn.innerHTML = 'Click me and check the console!';
-  btn.onclick = printMe;
-
-  element.appendChild(btn);
-
-  return element;
-}
-
-document.body.appendChild(component());
+  });
+  };
