@@ -24,9 +24,9 @@
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 Awesome Books <a name="about-project"></a>
+# 📖 Todo List <a name="about-project"></a>
 
-This is  **Awesome Books** site, created with HTML and Javascript.
+This is **Todo List** site, created with HTML and Javascript.
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -36,6 +36,9 @@ This is  **Awesome Books** site, created with HTML and Javascript.
   <summary>HTML</summary>
 </details>
 
+<details>
+<summary>CSS</summary>
+</details>
 <details>
 <summary>Javascript</summary>
 </details>
@@ -47,7 +50,6 @@ This is  **Awesome Books** site, created with HTML and Javascript.
 - **GitHub WorkFlow**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -61,19 +63,17 @@ To get a local copy up and running, follow these steps.
 
 In order to run this project you need:
 
-  - Code editor
-  - Node
-
+- Code editor
+- Webpack
 
 ### Setup
 
 Clone this repository to your desired folder by opening the terminal and running the following command:
 
 ```sh
- git clone `git@github.com:StevenWafeek/Awesome-books.git`
+ git clone `https://github.com/StevenWafeek/webpack`
 
 ```
-
 
 ### Install
 
@@ -88,19 +88,20 @@ Install this project with:
 
 To run the project:
 
-  Open the Project in your code editor and start Live Server inside the index.html file. 
+Open the Project in your code editor and start Live Server inside the index.html file.
 
 ### Run tests
 
 To run tests, run the following commands:
 
-  For HTML linter errors:
+For HTML linter errors:
 
 ```sh
  npx hint .
 
 ```
-  For CSS linter errors:
+
+For CSS linter errors:
 
 ```sh
  npx stylelint "**/*.{css,scss}"
@@ -124,24 +125,21 @@ Deployed by GitHub Pages.
 
 ## 👥 Authors <a name="authors"></a>
 
-👤 **Hajnalka Oltyan**
-
-- GitHub: [@hajnaloltyan](https://github.com/hajnaloltyan)
-- LinkedIn: [Hajnal Oltyan](https://www.linkedin.com/in/hajnalka-oltyan/)
-
 👤 **steven wafeek**
 
 - GitHub: [StevenWafeek](https://github.com/StevenWafeek)
 - Twitter: [steven_hakeem](https://twitter.com/steven_hakeem)
 - LinkedIn: [steven wafeek
-](https://www.linkedin.com/in/steven-wafeek-b629341b6/)
+  ](https://www.linkedin.com/in/steven-wafeek-b629341b6/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- FUTURE FEATURES -->
 
 ## 🔭 Future milestone <a name="future-features"></a>
+
 - using ES6
+- using Webpack
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -165,7 +163,7 @@ If you like this project please leave a star and a comment.
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
-I would like to thank Microverse to have this opportunity, and also thank you the code review team. 
+I would like to thank Microverse to have this opportunity, and also thank you the code review team.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
