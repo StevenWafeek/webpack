@@ -39,7 +39,23 @@ li {
   border-bottom: 1px solid #ccc;
 }
 
-.todo-completed {
+.todo-completed .todo-item-edit {
   text-decoration: line-through;
   color: #ccc;
+}
+.icon{
+  width: 17px;
+  background: url(./sUqME.jpg);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+.icon:hover{
+  background: url(./1175088.png);
+  width: 15px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+
 }
