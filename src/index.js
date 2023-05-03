@@ -1,4 +1,5 @@
 import Task from './buttons.js';
+import './style.css';
 
 const todoList = document.querySelector('.todo-list');
 const addInput = document.querySelector('.add-input');
@@ -58,6 +59,6 @@ clearAllButton.addEventListener('click', () => {
   });
   Task.setTasks(newTasks);
   renderTasks();
-})
+});
 
 renderTasks();

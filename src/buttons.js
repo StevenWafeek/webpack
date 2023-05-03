@@ -21,16 +21,17 @@ class Task {
   }
 
   static removeTask(id) {
-    let tasks = Task.getTasks();
+    const tasks = Task.getTasks();
     const index = tasks.findIndex((task) => task.id === id);
     if (index !== -1) {
       tasks.splice(index, 1);
-      for (let i = index; i < tasks.length; i++) {
-        tasks[i].id--;
+      for (let i = index; i < tasks.length; i += 1) {
+        tasks[i].id -= 1;
       }
       Task.setTasks(tasks);
     }
   }
+
   static editTaskDescription(id, newDescription) {
     const tasks = Task.getTasks();
     const task = tasks.find((task) => task.id === id);
@@ -48,4 +49,4 @@ class Task {
     Task.setTasks(tasks);
   }
 }
-export default Task
+export default Task;
