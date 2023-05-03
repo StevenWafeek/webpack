@@ -7,13 +7,15 @@
   border: 2px solid #b1b5c1c7;
   margin-left: 10%;
   box-sizing: border-box;
-  padding: 25px;
+  padding: 9px;
   border-radius: 45px;
-  box-shadow: rgb(16 16 245 / 22%) 12px 20px 20px 0px, rgb(241 218 218 / 58%) 0 30px 60px -30px, rgb(116 111 111 / 78%) 0 -2px 6px 0 inset;
+  box-shadow: rgb(16 16 245 / 22%) 12px 20px 20px 0, rgb(241 218 218 / 58%) 0 30px 60px -30px, rgb(116 111 111 / 78%) 0 -2px 6px 0 inset;
 }
-.container h2{
+
+.container h2 {
   align-self: flex-start;
 }
+
 #todo-list {
   width: 400px;
   margin: 0 auto;
@@ -39,23 +41,29 @@ li {
   width: 100%;
   justify-content: center;
 }
-input{
+
+input {
   border: 1px solid transparent;
 }
+
 .add-input {
   width: 93%;
   height: 30px;
 }
-.add-botton{
-  background: #ffffff;
+
+.add-button {
+  background: transparent;
+  border: transparent;
 }
-.clear-all{
-  width: 108%;
-    height: 57px;
-    border-radius: 0 0 42px 40px;
-    padding: 5px;
-    border: transparent;
-    margin-bottom: -24px;
+
+.clear-all {
+  width: 102%;
+  height: 43px;
+  border-radius: 0 0 42px 40px;
+  padding: 5px;
+  border: transparent;
+  background: #ededed59;
+  cursor: pointer;
 }
 
 .task {
@@ -68,7 +76,8 @@ input{
   text-decoration: line-through;
   color: #ccc;
 }
-.icon{
+
+.icon {
   width: 17px;
   background: url(./sUqME.jpg);
   background-position: center;
@@ -76,11 +85,11 @@ input{
   background-repeat: no-repeat;
   cursor: pointer;
 }
-.icon:hover{
+
+.icon:hover {
   background: url(./1175088.png);
   width: 15px;
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
-
 }
