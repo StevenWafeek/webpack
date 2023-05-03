@@ -1,51 +1,63 @@
-import './style.css';
+import Task from './buttons.js';
 
-class Task {
-  static tasks = [
-    {
-      id: 0,
-      description: 'Do laundry',
-      completed: false,
-    },
-    {
-      id: 1,
-      description: 'Buy groceries',
-      completed: false,
-    },
-    {
-      id: 2,
-      description: 'Go for a run',
-      completed: true,
-    },
-  ];
+const todoList = document.querySelector('.todo-list');
+const addInput = document.querySelector('.add-input');
+const addButton = document.querySelector('.add-button');
+const clearAllButton = document.querySelector('.clear-all');
 
-  constructor(description) {
-    this.id = Task.tasks.length;
-    this.description = description;
-    this.completed = false;
-  }
-
-  static toggleTaskStatus(id) {
-    Task.tasks.forEach((task) => {
-      if (task.id === id) {
-        task.completed = !task.completed;
-      }
-    });
-  }
-}
-
-window.onload = () => {
-  const todoList = document.querySelector('.todo-list');
-  Task.tasks.forEach((task) => {
+function renderTasks() {
+  const tasks = Task.getTasks();
+  todoList.innerHTML = '';
+  tasks.forEach((task) => {
     const li = document.createElement('li');
     li.className = 'todo-item';
     li.innerHTML = ` 
       <label data-id=${task.id} class="${task.completed ? 'todo-completed' : ''}"> 
       <input type="checkbox" class="todo-item-check" ${task.completed ? 'checked' : ''}> 
-      ${task.description}    
+      <input type="text" class="todo-item-edit" value="${task.description}">
       </label>
-      <i class="fas fa-ellipsis-v item-edit-icon"></i> 
+      <i class="icon"></i> 
       `;
+
+    const editInput = li.querySelector('.todo-item-edit');
+    editInput.addEventListener('blur', () => {
+      const newDescription = editInput.value;
+      Task.editTaskDescription(task.id, newDescription);
+      renderTasks();
+    });
+
+    const checkbox = li.querySelector('.todo-item-check');
+    checkbox.addEventListener('change', () => {
+      Task.toggleTaskStatus(task.id);
+      renderTasks();
+    });
+
+    const deleteIcon = li.querySelector('.icon');
+    deleteIcon.addEventListener('click', () => {
+      Task.removeTask(task.id);
+      renderTasks();
+    });
     todoList.appendChild(li);
   });
-};
+}
+
+addButton.addEventListener('click', () => {
+  const description = addInput.value;
+  if (description) {
+    Task.addTask(description);
+    addInput.value = '';
+    renderTasks();
+  }
+});
+
+clearAllButton.addEventListener('click', () => {
+  const tasks = Task.getTasks();
+  const newTasks = tasks.filter((task) => !task.completed);
+  newTasks.forEach((task, index) => {
+    task.id = index;
+  });
+  Task.setTasks(newTasks);
+  renderTasks();
+})
+
+renderTasks();
