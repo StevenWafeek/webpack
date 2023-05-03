@@ -36,7 +36,7 @@ class Task {
 
 window.onload = () => {
   const todoList = document.querySelector('.todo-list');
-  Task.tasks.forEach((task) => {
+    tasks.forEach((task) => {
     const li = document.createElement('li');
     li.className = 'todo-item';
     li.innerHTML = ` 
