@@ -1,32 +1,32 @@
 import './style.css';
 
-const tasks = [
-  {
-    id: 0,
-    description: 'Do laundry',
-    completed: false,
-  },
-  {
-    id: 1,
-    description: 'Buy groceries',
-    completed: false,
-  },
-  {
-    id: 2,
-    description: 'Go for a run',
-    completed: true,
-  },
-];
-
 class Task {
+  static tasks = [
+    {
+      id: 0,
+      description: 'Do laundry',
+      completed: false,
+    },
+    {
+      id: 1,
+      description: 'Buy groceries',
+      completed: false,
+    },
+    {
+      id: 2,
+      description: 'Go for a run',
+      completed: true,
+    },
+  ];
+
   constructor(description) {
-    this.id = tasks.length;
+    this.id = Task.tasks.length;
     this.description = description;
     this.completed = false;
   }
 
   static toggleTaskStatus(id) {
-    tasks.forEach((task) => {
+    Task.tasks.forEach((task) => {
       if (task.id === id) {
         task.completed = !task.completed;
       }
@@ -36,7 +36,7 @@ class Task {
 
 window.onload = () => {
   const todoList = document.querySelector('.todo-list');
-    tasks.forEach((task) => {
+  Task.tasks.forEach((task) => {
     const li = document.createElement('li');
     li.className = 'todo-item';
     li.innerHTML = ` 
