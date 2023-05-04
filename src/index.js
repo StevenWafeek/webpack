@@ -19,7 +19,6 @@ function renderTasks() {
       </label>
       <i class="icon"></i> 
       `;
-
     const editInput = li.querySelector('.todo-item-edit');
     editInput.addEventListener('blur', () => {
       const newDescription = editInput.value;
@@ -55,8 +54,9 @@ clearAllButton.addEventListener('click', () => {
   const tasks = Task.getTasks();
   const newTasks = tasks.filter((task) => !task.completed);
   newTasks.forEach((task, index) => {
-    task.id = index;
+    task.id = index + 1;
   });
+
   Task.setTasks(newTasks);
   renderTasks();
 });

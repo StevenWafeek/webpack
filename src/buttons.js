@@ -11,7 +11,7 @@ class Task {
   static addTask(description) {
     const tasks = Task.getTasks();
     const task = {
-      id: tasks.length,
+      id: tasks.length + 1,
       description,
       completed: false,
     };
