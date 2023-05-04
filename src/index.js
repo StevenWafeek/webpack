@@ -1,6 +1,8 @@
-import Task from './modules/buttons.js';
+import Task from './modules/tasks.js';
 import './style.css';
-import { renderTasks, addButton, addInput, clearAllButton } from './modules/todo.js';
+import {
+  renderTasks, addButton, addInput, clearAllButton,
+} from './modules/todo.js';
 
 renderTasks(Task);
 
